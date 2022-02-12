@@ -21,7 +21,7 @@ use League\CommonMark\Extension\FrontMatter\Data\LibYamlFrontMatterParser;
 
 Route::get('/', function () {
     return view('posts', [
-        'posts' => Post::latest()->with("category, user")->get()
+        'posts' => Post::latest()->with('category', "author")->get()
     ]);
 });
 
